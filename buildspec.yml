@@ -17,7 +17,10 @@ phases:
       - apt-get -y install software-properties-common
       - sudo add-apt-repository ppa:deadsnakes/ppa
       - apt-get update
-      - apt-get -y install python3.7 jq python3-pip python3.7-dev && pip3 install --upgrade awscli
+      - apt-get -y install python3.7 jq python3-pip python3.7-dev
+      - curl https://bootstrap.pypa.io/ez_setup.py -o - | python3.7
+      - easy_install pip
+      - pip3 install --upgrade awscli
       - ln -sf /usr/bin/python3.7 /usr/local/bin/python3
   pre_build:
       commands:
